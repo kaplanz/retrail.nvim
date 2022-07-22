@@ -18,6 +18,7 @@ return {
     -- Excluded filetype list. Overrides `include` list.
     exclude = {
       "",
+      "diff",
       "help"
     },
   },
