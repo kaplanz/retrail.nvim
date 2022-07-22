@@ -68,9 +68,13 @@ function M:enabled()
   end
 end
 
+function M.ident()
+  return string.format("%d:%d", vim.fn.tabpagenr(), vim.fn.winnr())
+end
+
 function M:matchadd()
   -- Extract match for window
-  local ident = self.tabwinnr()
+  local ident = self.ident()
   local match = self.matches[ident]
   if not match then
     -- Add match to window
@@ -81,17 +85,13 @@ end
 
 function M:matchdelete()
   -- Extract match for window
-  local ident = M.tabwinnr()
+  local ident = M.ident()
   local match = self.matches[ident]
   if match then
     -- Delete match from window
     vim.fn.matchdelete(match)
     self.matches[ident] = nil
   end
-end
-
-function M.tabwinnr()
-  return string.format("%d:%d", vim.fn.tabpagenr(), vim.fn.winnr())
 end
 
 function M:trim()
