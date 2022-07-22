@@ -17,7 +17,7 @@ function M.setup(opts)
 
   -- Prepare autocommands
   local augroup = vim.api.nvim_create_augroup("Retrail", {})
-  vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWinLeave" }, {
+  vim.api.nvim_create_autocmd({ "BufEnter" }, {
     group = augroup,
     callback = refresh,
   })
@@ -76,7 +76,7 @@ function M:matchadd()
   -- Extract match for window
   local ident = self.ident()
   local match = self.matches[ident]
-  if not match then
+  if match == nil then
     -- Add match to window
     match = vim.fn.matchadd(self.config.hlgroup, self.config.pattern)
     self.matches[ident] = match
@@ -87,7 +87,7 @@ function M:matchdelete()
   -- Extract match for window
   local ident = M.ident()
   local match = self.matches[ident]
-  if match then
+  if match ~= nil then
     -- Delete match from window
     vim.fn.matchdelete(match)
     self.matches[ident] = nil
