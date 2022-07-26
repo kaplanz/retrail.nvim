@@ -18,8 +18,10 @@ return {
     -- Excluded filetype list. Overrides `include` list.
     exclude = {
       "",
+      "checkhealth",
       "diff",
-      "help"
+      "help",
+      "man",
     },
   },
   -- Trim on write behaviour.
