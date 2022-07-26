@@ -89,7 +89,7 @@ function M:matchdelete()
   local match = self.matches[ident]
   if match ~= nil then
     -- Delete match from window
-    vim.fn.matchdelete(match)
+    pcall(vim.fn.matchdelete, match)
     self.matches[ident] = nil
   end
 end
