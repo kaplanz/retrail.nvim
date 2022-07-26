@@ -61,7 +61,7 @@ function M:enabled()
   end
   -- Check if this filetype is enabled
   local enabled = self.config.enabled[vim.bo.filetype]
-  if self.config.strict then
+  if self.config.filetype.strict then
     return enabled == true -- true
   else
     return enabled ~= false -- true | nil
