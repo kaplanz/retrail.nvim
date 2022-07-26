@@ -17,7 +17,7 @@ function M.setup(opts)
 
   -- Prepare autocommands
   local augroup = vim.api.nvim_create_augroup("Retrail", {})
-  vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
     group = augroup,
     callback = refresh,
   })
