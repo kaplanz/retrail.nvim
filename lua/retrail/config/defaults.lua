@@ -22,6 +22,9 @@ return {
       "diff",
       "help",
       "man",
+      "WhichKey",
+      "alpha",
+      "mason.nvim",
     },
   },
   -- Trim on write behaviour.
