@@ -41,8 +41,13 @@ require("retrail").setup {
     -- Excluded filetype list. Overrides `include` list.
     exclude = {
       "",
+      "checkhealth",
       "diff",
-      "help"
+      "help",
+      "man",
+      "WhichKey",
+      "alpha",
+      "mason.nvim",
     },
   },
   -- Trim on write behaviour.
