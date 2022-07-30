@@ -49,6 +49,7 @@ require("retrail").setup {
       "man",
       "mason.nvim",
       "TelescopePrompt",
+      "Trouble",
       "WhichKey",
     },
   },

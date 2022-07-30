@@ -26,6 +26,7 @@ return {
       "man",
       "mason.nvim",
       "TelescopePrompt",
+      "Trouble",
       "WhichKey",
     },
   },
