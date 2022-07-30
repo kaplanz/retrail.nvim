@@ -45,6 +45,7 @@ require("retrail").setup {
       "checkhealth",
       "diff",
       "help",
+      "lspinfo",
       "man",
       "mason.nvim",
       "TelescopePrompt",

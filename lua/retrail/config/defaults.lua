@@ -22,6 +22,7 @@ return {
       "checkhealth",
       "diff",
       "help",
+      "lspinfo",
       "man",
       "mason.nvim",
       "TelescopePrompt",
