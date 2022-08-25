@@ -24,7 +24,7 @@ return {
       "help",
       "lspinfo",
       "man",
-      "mason.nvim",
+      "mason",
       "TelescopePrompt",
       "Trouble",
       "WhichKey",

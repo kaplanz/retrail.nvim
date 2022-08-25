@@ -47,7 +47,7 @@ require("retrail").setup {
       "help",
       "lspinfo",
       "man",
-      "mason.nvim",
+      "mason",
       "TelescopePrompt",
       "Trouble",
       "WhichKey",
