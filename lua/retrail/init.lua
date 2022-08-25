@@ -21,7 +21,7 @@ function M.setup(opts)
     group = augroup,
     callback = refresh,
   })
-  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  vim.api.nvim_create_autocmd("BufWritePre", {
     group = augroup,
     callback = function()
       if M:enabled() then
