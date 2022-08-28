@@ -29,6 +29,28 @@ function M.setup(opts)
       end
     end,
   })
+
+  -- Create user commands
+  vim.api.nvim_create_user_command("RetrailEnable", function()
+    M:set(true)
+  end, {
+    desc = "Enable for the current buffer",
+    nargs = 0,
+  })
+
+  vim.api.nvim_create_user_command("RetrailDisable", function()
+    M:set(false)
+  end, {
+    desc = "Disable for the current buffer",
+    nargs = 0,
+  })
+
+  vim.api.nvim_create_user_command("RetrailToggle", function()
+    M:toggle()
+  end, {
+    desc = "Toggle for the current buffer",
+    nargs = 0,
+  })
 end
 
 refresh = function()
