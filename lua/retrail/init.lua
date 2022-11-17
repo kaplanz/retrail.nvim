@@ -21,14 +21,16 @@ function M.setup(opts)
     group = augroup,
     callback = refresh,
   })
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    group = augroup,
-    callback = function()
-      if M:enabled() then
-        M:trim()
-      end
-    end,
-  })
+  if M.config.auto then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      callback = function()
+        if M:enabled() then
+          M:trim()
+        end
+      end,
+    })
+  end
 
   -- Create user commands
   vim.api.nvim_create_user_command("RetrailEnable", function()
@@ -51,6 +53,10 @@ function M.setup(opts)
     desc = "Toggle for the current buffer",
     nargs = 0,
   })
+  vim.api.nvim_create_user_command('TrimWhitespace', function()
+    M:trim()
+  end, {})
+
 end
 
 refresh = function()
