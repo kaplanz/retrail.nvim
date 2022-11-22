@@ -21,7 +21,6 @@ return {
       "alpha",
       "checkhealth",
       "diff",
-      "help",
       "lspinfo",
       "man",
       "mason",

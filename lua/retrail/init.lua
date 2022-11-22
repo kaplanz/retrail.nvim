@@ -82,6 +82,14 @@ function M:toggle()
 end
 
 function M:enabled()
+  -- Disable for terminal buffer
+  if vim.bo.buftype == "terminal"
+    or vim.bo.buftype == "help"
+    or vim.bo.buftype == "quickfix"
+    or vim.bo.buftype == "prompt"
+  then
+    return false
+  end
   -- Check for a buffer override
   local override = self.override[vim.fn.bufnr()]
   if override ~= nil then
