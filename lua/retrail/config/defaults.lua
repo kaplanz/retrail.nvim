@@ -19,6 +19,7 @@ return {
     exclude = {
       "",
       "alpha",
+      "aerial",
       "checkhealth",
       "diff",
       "lspinfo",
