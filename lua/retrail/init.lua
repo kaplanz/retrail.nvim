@@ -76,28 +76,22 @@ function M:toggle()
 end
 
 function M:enabled()
-  -- Disable for terminal buffer
-  if vim.bo.buftype == "terminal"
-    or vim.bo.buftype == "help"
-    or vim.bo.buftype == "quickfix"
-    or vim.bo.buftype == "prompt"
-  then
-    return false
-  end
   -- Check for a buffer override
   local override = self.override[vim.api.nvim_get_current_buf()]
   if override ~= nil then
     return override
   end
   -- Check if this filetype is enabled
-  local enabled = self.config.enabled[vim.bo.filetype]
-  if self.config.filetype.strict then
-    -- Strict filetypes: only allow included filetypes
-    return enabled == true
-  else
-    -- Lenient filetypes: only disallow excluded filetypes
-    return enabled ~= false
+  local enabled_filetype = self.config.enabled_buftype[vim.bo.buftype]
+  if enabled_filetype == nil then
+    enabled_filetype = not self.config.filetype.strict
   end
+  -- Check if this buftype is enabled
+  local enabled_buftype = self.config.enabled_filetype[vim.bo.filetype]
+  if enabled_buftype == nil then
+    enabled_buftype = not self.config.buftype.strict
+  end
+  return enabled_filetype and enabled_buftype
 end
 
 function M.ident()

@@ -25,10 +25,27 @@ return {
       "lspinfo",
       "man",
       "mason",
+      "cmp_menu",
       "TelescopePrompt",
       "Trouble",
       "WhichKey",
     },
+  },
+  -- Enabled buftypes.
+  buftype = {
+    -- Strictly enable only on `include`ed buftypes. When false, only disabled
+    -- on an `exclude`ed buftype.
+    strict = false,
+    -- Included filetype list. Overrides `include` list.
+    include = {},
+    -- Excluded filetype list.
+    exclude = {
+      "help",
+      "terminal",
+      "quickfix",
+      "prompt",
+      "nofile",
+    }
   },
   -- Trim on write behaviour.
   trim = {
