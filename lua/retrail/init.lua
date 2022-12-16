@@ -70,7 +70,7 @@ end
 
 function M:toggle()
   -- Record the override
-  self.override[vim.fn.bufnr()] = not self:enabled()
+  self.override[#self.override + 1] = vim.api.nvim_get_current_buf()
   -- Trigger a refresh
   refresh()
 end
@@ -85,7 +85,7 @@ function M:enabled()
     return false
   end
   -- Check for a buffer override
-  local override = self.override[vim.fn.bufnr()]
+  local override = self.override[vim.api.nvim_get_current_buf()]
   if override ~= nil then
     return override
   end
@@ -101,7 +101,9 @@ function M:enabled()
 end
 
 function M.ident()
-  return string.format("%d:%d", vim.fn.tabpagenr(), vim.fn.winnr())
+  local win = vim.api.nvim_get_current_win()
+  local tab = vim.api.nvim_win_get_tabpage(win)
+  return string.format("%d:%d", tab, win)
 end
 
 function M:matchadd()
@@ -128,7 +130,7 @@ end
 
 function M:trim()
   -- Save cursor position
-  local _, lnum, col, off, _ = unpack(vim.fn.getcurpos())
+  local cursor_pos = vim.api.nvim_win_get_cursor(0)
   -- Trim trailing whitespace
   if self.config.trim.whitespace then
     vim.cmd [[keeppatterns %s#\s\+$##e]]
@@ -138,7 +140,7 @@ function M:trim()
     vim.cmd [[keeppatterns vg#\_s*\S#d]]
   end
   -- Restore cursor position
-  vim.fn.cursor(lnum, col, off)
+  vim.api.nvim_win_set_cursor(0, cursor_pos)
 end
 
 return M
