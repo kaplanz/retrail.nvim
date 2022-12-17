@@ -80,9 +80,6 @@ require("retrail").setup {
 }
 ```
 
-Note: retrail is always disabled in `terminal`, `quickfix`, `prompt`, and `help`
-buffers matching on `buftype`.
-
 <!-- Reference-style links -->
 [defaults]: ./lua/retrail/config/defaults.lua
 [packer]:   https://github.com/wbthomason/packer.nvim
