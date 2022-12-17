@@ -63,14 +63,14 @@ end
 
 function M:set(enabled)
   -- Record the override
-  self.override[vim.fn.bufnr()] = enabled
+  self.override[vim.api.nvim_get_current_buf()] = enabled
   -- Trigger a refresh
   refresh()
 end
 
 function M:toggle()
   -- Record the override
-  self.override[#self.override + 1] = vim.api.nvim_get_current_buf()
+  self.override[vim.api.nvim_get_current_buf()] = not self:enabled()
   -- Trigger a refresh
   refresh()
 end
