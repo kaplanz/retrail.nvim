@@ -55,7 +55,10 @@ function M.setup(opts)
   })
   vim.api.nvim_create_user_command('RetrailTrimWhitespace', function()
     M:trim()
-  end, {})
+  end, {
+    desc = "Trim trailing whitespace",
+    nargs = 0,
+  })
 
 end
 
