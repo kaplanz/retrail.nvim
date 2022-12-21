@@ -45,6 +45,7 @@ require("retrail").setup {
       "checkhealth",
       "diff",
       "help",
+      "lazy",
       "lspinfo",
       "man",
       "mason",

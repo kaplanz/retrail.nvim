@@ -22,6 +22,7 @@ return {
       "checkhealth",
       "diff",
       "help",
+      "lazy",
       "lspinfo",
       "man",
       "mason",
