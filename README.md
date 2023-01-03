@@ -11,7 +11,7 @@ Install this plugin using your favorite plugin manager. For example, using
 [packer]:
 
 ```lua
-use "zakharykaplan/nvim-retrail"
+use "kaplanz/nvim-retrail"
 ```
 
 To get started with the default configuration, add:
