@@ -46,7 +46,6 @@ require("retrail").setup {
       "checkhealth",
       "cmp_menu",
       "diff",
-      "help",
       "lazy",
       "lspinfo",
       "man",
@@ -55,6 +54,22 @@ require("retrail").setup {
       "Trouble",
       "WhichKey",
     },
+  },
+  -- Enabled buftypes.
+  buftype = {
+    -- Strictly enable only on `include`ed buftypes. When false, only disabled
+    -- on an `exclude`ed buftype.
+    strict = false,
+    -- Included filetype list. Overrides `include` list.
+    include = {},
+    -- Excluded filetype list.
+    exclude = {
+      "help",
+      "nofile",
+      "prompt",
+      "quickfix",
+      "terminal",
+    }
   },
   -- Trim on write behaviour.
   trim = {

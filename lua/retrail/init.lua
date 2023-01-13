@@ -91,18 +91,22 @@ function M:enabled()
     return override
   end
   -- Check if this filetype is enabled
-  local enabled = self.config.enabled[vim.bo.filetype]
-  if self.config.filetype.strict then
-    -- Strict filetypes: only allow included filetypes
-    return enabled == true
-  else
-    -- Lenient filetypes: only disallow excluded filetypes
-    return enabled ~= false
+  local filetype = self.config.enabled.filetype[vim.bo.filetype]
+  if filetype == nil then
+    filetype = not self.config.filetype.strict
   end
+  -- Check if this buftype is enabled
+  local buftype = self.config.enabled.buftype[vim.bo.buftype]
+  if buftype == nil then
+    buftype = not self.config.buftype.strict
+  end
+  return filetype and buftype
 end
 
 function M.ident()
-  return string.format("%d:%d", vim.fn.tabpagenr(), vim.fn.winnr())
+  local win = vim.fn.tabpagenr()
+  local tab = vim.fn.winnr()
+  return string.format("%d:%d", tab, win)
 end
 
 function M:matchadd()
