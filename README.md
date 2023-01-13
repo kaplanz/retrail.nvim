@@ -41,6 +41,7 @@ require("retrail").setup {
     -- Excluded filetype list. Overrides `include` list.
     exclude = {
       "",
+      "aerial",
       "alpha",
       "checkhealth",
       "diff",
