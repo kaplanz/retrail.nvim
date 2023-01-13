@@ -21,6 +21,7 @@ return {
       "aerial",
       "alpha",
       "checkhealth",
+      "cmp_menu",
       "diff",
       "help",
       "lazy",

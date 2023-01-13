@@ -44,6 +44,7 @@ require("retrail").setup {
       "aerial",
       "alpha",
       "checkhealth",
+      "cmp_menu",
       "diff",
       "help",
       "lazy",
