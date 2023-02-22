@@ -83,6 +83,12 @@ require("retrail").setup {
 }
 ```
 
+## Commands
+1. `:RetrailTrimWhitespace` Trim trailing whitespace
+2. `:RetrailEnable` Enable trim trailing for the current buffer
+3. `:RetrailDisable` Disable trim trailing for the current buffer
+4. `:RetrailToggle` Toggle trim trailing for the current buffer
+
 <!-- Reference-style links -->
 [defaults]: ./lua/retrail/config/defaults.lua
 [packer]:   https://github.com/wbthomason/packer.nvim
