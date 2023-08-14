@@ -1,4 +1,4 @@
-# nvim-retrail
+# retrail.nvim
 
 Retrail is a small Neovim plugin for managing trailing whitespace. It has two
 main features:
@@ -11,7 +11,7 @@ Install this plugin using your favorite plugin manager. For example, using
 [packer]:
 
 ```lua
-use "kaplanz/nvim-retrail"
+use "kaplanz/retrail.nvim"
 ```
 
 To get started with the default configuration, add:
