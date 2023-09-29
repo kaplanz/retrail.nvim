@@ -8,13 +8,16 @@ main features:
 ## Installation
 
 Install this plugin using your favorite plugin manager. For example, using
-[packer]:
+[lazy]:
 
 ```lua
-use "kaplanz/retrail.nvim"
+{
+  "kaplanz/retrail.nvim",
+  opts = {}, -- calls `setup` using provided `opts`
+},
 ```
 
-To get started with the default configuration, add:
+To manually set up the plugin, call the `setup` function:
 
 ```lua
 require("retrail").setup()
@@ -91,4 +94,4 @@ require("retrail").setup {
 
 <!-- Reference-style links -->
 [defaults]: ./lua/retrail/config/defaults.lua
-[packer]:   https://github.com/wbthomason/packer.nvim
+[lazy]:     https://github.com/folke/lazy.nvim
