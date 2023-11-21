@@ -22,6 +22,7 @@ return {
       "alpha",
       "checkhealth",
       "cmp_menu",
+      "dashboard",
       "diff",
       "lazy",
       "lspinfo",

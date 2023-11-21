@@ -48,6 +48,7 @@ require("retrail").setup {
       "alpha",
       "checkhealth",
       "cmp_menu",
+      "dashboard",
       "diff",
       "lazy",
       "lspinfo",
