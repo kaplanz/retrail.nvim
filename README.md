@@ -63,9 +63,9 @@ require("retrail").setup {
     -- Strictly enable only on `include`ed buftypes. When false, only disabled
     -- on an `exclude`ed buftype.
     strict = false,
-    -- Included filetype list. Overrides `include` list.
+    -- Included buftype list.
     include = {},
-    -- Excluded filetype list.
+    -- Excluded buftype list. Overrides `include` list.
     exclude = {
       "help",
       "nofile",
