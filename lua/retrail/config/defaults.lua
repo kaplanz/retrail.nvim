@@ -28,6 +28,7 @@ return {
       "man",
       "mason",
       "TelescopePrompt",
+      "toggleterm",
       "Trouble",
       "WhichKey",
     },
