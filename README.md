@@ -54,6 +54,7 @@ require("retrail").setup {
       "man",
       "mason",
       "TelescopePrompt",
+      "toggleterm",
       "Trouble",
       "WhichKey",
     },
