@@ -104,9 +104,7 @@ function M:enabled()
 end
 
 function M.ident()
-  local win = vim.fn.tabpagenr()
-  local tab = vim.fn.winnr()
-  return string.format("%d:%d", tab, win)
+  return vim.fn.win_getid()
 end
 
 function M:matchadd()
